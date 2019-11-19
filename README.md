@@ -71,9 +71,8 @@ encrypts, decrypts and hashes key for a given string or file
 ## Installation
 cip was developed in C, compiled with gcc or clang (statically, for easy distribution of binary) and tested to run in windows, linux (ubuntu 18.0, centos 7.x, termux in adroid) and macOS Mojave / Catalina.
 
-Before you compile cip, prepare the libraries first:
 <ol>
-	<li>Compile libtommath first as this is required by libtomcrypt. The version I used is found in the <b>lib</b> folder
+<li>Compile libtommath first as this is required by libtomcrypt. The version I used is found in the <b>lib</b> folder
 <pre>
 cd lib/libtommath-1.2.0/
 make
@@ -87,5 +86,14 @@ make
 sudo make install
 </pre>
 </li>
+<li>Make a copy of libtomcrypt.a in lib folder for easy static compilation. If you want to compile against shared or dynamic library, you need to modify the corresponding makefile to remove static-compilation-related options.
+</li>
+<li>Compile cip. Use corresponding Makefile. The accompanying makefiles are: makefile (windows), makefile.nix (linux/unix), and makefile.osx (macOS)
+<pre>
+   Windows: make
+Linux/Unix: make -f makefile.nix
+     macOS: make -f makefile.osx
+</pre>
+</li>
 </ol>
-	
+
