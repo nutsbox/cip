@@ -1,7 +1,7 @@
 # cip
 <pre>
 cip v0.53 - tool for encryption, decryption, and hashing of given string or file
-by Nestor A. Jaba-an <nestor@nutsbox.ph>, 2019. Public Domain.
+by Nestor A. Jaba-an &lt;nestor@nutsbox.ph&gt;, 2019. Public Domain.
 
 NOTE: I consider cip itself as public domain, but I used some libraries that are 
 not public domain and due credit and license applies to these libraries.
@@ -34,7 +34,7 @@ encrypts, decrypts and hashes key for a given string or file
 -len  &lt;length&gt;    custom hash length (in bytes) for shake3-128/256.
                   defaults: shake3-128 (16 bytes), shake3-256 (32 bytes)
 
--k    <key>       key as required by the following:
+-k    &lt;key&gt;       key as required by the following:
                   - siphash (i.e., SipHash-2-4): 16 characters
                   - ciphers (see below). if not given, user will be prompted
                   to provide a key--no specific number of characters
@@ -55,13 +55,13 @@ encrypts, decrypts and hashes key for a given string or file
 			and outputs to screen or to [outfile]. if '-c' is not
 			specified, aes is the cipher used by default.
 
--c   <cipher>		cipher to use for encryption/decryption.
+-c   &lt;cipher&gt;		cipher to use for encryption/decryption.
 			ciphers: aes (default) blowfish xtea rc2 rc5 rc6 twofish
 			safer+ safer-k64 safer-sk64 safer-k128 safer-sk128
 			des 3des cast5 noekeon skipjack anubis khazad
 			seed kasumi multi2 camellia
 
--a   <algorithm>	set hashing algorithm to be used for.
+-a   &lt;algorithm&gt;	set hashing algorithm to be used for.
 			encryption/decryption (see above -t* option for list)
 
 -v			version info
