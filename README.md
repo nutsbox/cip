@@ -74,18 +74,18 @@ cip was developed in C, compiled with gcc or clang (statically, for easy distrib
 Before you compile cip, prepare the libraries first:
 <ol>
 	<li>Compile libtommath first as this is required by libtomcrypt. The version I used is found in the <b>lib</b> folder
-	<pre>
-	cd lib/libtommath-1.2.0/
-	make
-	sudo make install
-	</pre>
-	</li>
-	<li>Compile libtomcrypt library
-	<pre>
-	cd lib/libtomcrypt-1.18.2/src/
-	make
-	sudo make install
-	</pre>
-	</li>
+<pre>
+cd lib/libtommath-1.2.0/
+make
+sudo make install
+</pre>
+</li>
+<li>Compile libtomcrypt library
+<pre>
+cd lib/libtomcrypt-1.18.2/src/
+make
+sudo make install
+</pre>
+</li>
 </ol>
 	
