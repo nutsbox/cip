@@ -90,7 +90,7 @@ sudo make install
 </li>
 <li>Compile cip. Use corresponding Makefile. The accompanying makefiles are: makefile (windows), makefile.nix (linux/unix), and makefile.osx (macOS)
 <pre>
-   Windows: make
+   Windows: mingw32-make
 Linux/Unix: make -f makefile.nix
      macOS: make -f makefile.osx
 </pre>
