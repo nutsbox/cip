@@ -3,7 +3,8 @@
 cip v0.53 - tool for encryption, decryption, and hashing of given string or file
 by Nestor A. Jaba-an <nestor@nutsbox.ph>, 2019. Public Domain.
 
-NOTE: I consider cip itself as public domain, but I used some libraries that are not public domain and due credit and license applies to these libraries.
+NOTE: I consider cip itself as public domain, but I used some libraries that are 
+not public domain and due credit and license applies to these libraries.
 
 CREDITS:
   - Tom St Denis, LibTomCrypt v1.18.2 (PD), https://github.com/libtom/libtomcrypt
