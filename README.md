@@ -7,7 +7,7 @@ NOTE: I consider cip itself as public domain (PD), but I used some libraries tha
 are not public domain and due credit and license applies to these libraries.
 
 CREDITS:
-  - Tom St Denis, LibTomCrypt v1.18.2 (PD), https://github.com/libtom/libtomcrypt
+  - Tom St Denis, LibTomCrypt v1.18.2 (PD), <a href="https://github.com/libtom/libtomcrypt">https://github.com/libtom/libtomcrypt</a>
   - Tom St Denis, LibTomMath v1.2.0 (PD), https://github.com/libtom/libtommath
   - Daniel Richards, hashsum.c & ltcrypt.c (PD), <kyhwana@world-net.co.nz>
   - Majek, https://github.com/majek/csiphash/blob/master/csiphash.c (MIT Lic.)
