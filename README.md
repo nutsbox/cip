@@ -6,7 +6,7 @@ by Nestor A. Jaba-an <a href="mailto:nestor@nutsbox.ph">nestor@nutsbox.ph</a>, 2
 <b>NOTE:</b> I consider cip itself as public domain (PD), but I used some libraries that
 are not public domain and due credit and license applies to these libraries.
 
-CREDITS:
+<b>CREDITS:</b>
   - Tom St Denis, LibTomCrypt v1.18.2 (PD), <a href="https://github.com/libtom/libtomcrypt">https://github.com/libtom/libtomcrypt</a>
   - Tom St Denis, LibTomMath v1.2.0 (PD), <a href="https://github.com/libtom/libtommath">https://github.com/libtom/libtommath</a>
   - Daniel Richards, hashsum.c & ltcrypt.c (PD), <a href="mailto:kyhwana@world-net.co.nz">kyhwana@world-net.co.nz</a>
@@ -15,6 +15,7 @@ CREDITS:
   - Rxi, <a href="https://github.com/rxi/uuid4">https://github.com/rxi/uuid4</a> (MIT Lic.)
   - John Walker, base64-1.5 (PD), <a href="http://www.fourmilab.ch/webtools/base64/index.html">http://www.fourmilab.ch/webtools/base64/index.html</a>
 
+<b>USAGE:</b>
 usage:	cip [OPTIONS [SUB-PARAM]...]
 encrypts, decrypts and hashes key for a given string or file
 
