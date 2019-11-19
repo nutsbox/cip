@@ -18,8 +18,8 @@ CREDITS:
 usage:	cip [OPTIONS [SUB-PARAM]...]
 encrypts, decrypts and hashes key for a given string or file
 
--s.   <string>    the string to encrypt, decrypt or to hash
--f    <filename>  the file to encrypt, decrypt or to hash
+-s.   &lt;string&gt;   the string to encrypt, decrypt or to hash
+-f    &lt;filename&gt;  the file to encrypt, decrypt or to hash
 
 -t*   [algorithm] where '*' should be replaced by 's' or 'f'
                   performs hash on given string (-ts) or filename (-tf)
