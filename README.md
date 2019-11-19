@@ -1,4 +1,5 @@
 # cip
+<pre>
 cip v0.53 - tool for encryption, decryption, and hashing of given string or file
 by Nestor A. Jaba-an <nestor@nutsbox.ph>, 2019. Public Domain.
 
@@ -46,3 +47,4 @@ encrypts, decrypts and hashes key for a given string or file
 -u[*]             where '*' may be replaced by 's' or 'f'
                   generates uuid4 randomly (-u) or from given string (-us)
                   or filename (-uf)
+</pre>
