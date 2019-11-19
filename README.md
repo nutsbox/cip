@@ -86,7 +86,7 @@ make
 sudo make install
 </pre>
 </li>
-<li>Make a copy of libtomcrypt.a in lib folder for easy static compilation. If you want to compile against shared or dynamic library, you need to modify the corresponding makefile to remove static-compilation-related options.
+<li>If you want to compile against shared or dynamic library, you need to modify the corresponding makefile to remove static-compilation-related options.
 </li>
 <li>Compile cip. Use corresponding Makefile. The accompanying makefiles are: makefile (windows), makefile.nix (linux/unix), and makefile.osx (macOS)
 <pre>
