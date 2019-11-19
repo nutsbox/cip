@@ -75,16 +75,16 @@ Before you compile cip, prepare the libraries first:
 <ol>
 	<li>Compile libtommath first as this is required by libtomcrypt. The version I used is found in the <b>lib</b> folder
 		<pre><code>
-			cd lib/libtommath-1.2.0/
-			make
-			sudo make install
+	cd lib/libtommath-1.2.0/
+	make
+	sudo make install
 		</code></pre>
 	</li>
 	<li>Compile libtomcrypt library
 		<pre><code>
-			cd lib/libtomcrypt-1.18.2/src/
-			make
-			sudo make install
+	cd lib/libtomcrypt-1.18.2/src/
+	make
+	sudo make install
 		</code></pre>
 	</li>
 	</ol>
