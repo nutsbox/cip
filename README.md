@@ -31,7 +31,7 @@ encrypts, decrypts and hashes key for a given string or file
                   rmd160 rmd256 rmd320 chc_hash siphash crc32 adler32
                   shake3-128 shake3-256
       
--len  <length>    custom hash length (in bytes) for shake3-128/256.
+-len  &lt;length&gt;    custom hash length (in bytes) for shake3-128/256.
                   defaults: shake3-128 (16 bytes), shake3-256 (32 bytes)
 
 -k    <key>       key as required by the following:
@@ -48,4 +48,22 @@ encrypts, decrypts and hashes key for a given string or file
 -u[*]             where '*' may be replaced by 's' or 'f'
                   generates uuid4 randomly (-u) or from given string (-us)
                   or filename (-uf)
+
+-e*  [outfile]		where '*' should be replaced by 's' or 'f'
+-d*  [outfile]		encrypts or decrypts a string (-es|-ds)
+			given through '-s' or file (-ef|-df) given through '-f'
+			and outputs to screen or to [outfile]. if '-c' is not
+			specified, aes is the cipher used by default.
+
+-c   <cipher>		cipher to use for encryption/decryption.
+			ciphers: aes (default) blowfish xtea rc2 rc5 rc6 twofish
+			safer+ safer-k64 safer-sk64 safer-k128 safer-sk128
+			des 3des cast5 noekeon skipjack anubis khazad
+			seed kasumi multi2 camellia
+
+-a   <algorithm>	set hashing algorithm to be used for.
+			encryption/decryption (see above -t* option for list)
+
+-v			version info
+-h			help (this page)
 </pre>
