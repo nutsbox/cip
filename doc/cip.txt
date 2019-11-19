@@ -1,0 +1,115 @@
+CIP (shorthand for cipher)
+A small utility that allows generation of hash key / checksum for a given string or file. It also allows encryption/decription of string.
+
+NOTE: In the production of this utility, we used Chilkat Library for MingW/GCC 8.1 Win32 SEH (no we abandoned this approach)
+
+LIBRARIES USED:
+- libtomcrypt-1.18.2, requires libtommath (see lib/libtommath-develop folder).
+1. Compile libtommath - go to libtommath directory and execute "gmake or mingw32-make -f makefile.mingw"
+2. Copy libtommath.a to C:\MinGW\lib\gcc\x86_64-w64-mingw32\8.1.0
+3. Copy tommath.h to C:\MinGW\lib\gcc\x86_64-w64-mingw32\8.1.0\include
+4. Compile libtomcrypt-1.18.2 - go to libtomcrypt and execute "gmake or mingw32-make -f makefile.mingw"
+5. Copy libtomcrypt headers (libtomcrypt-1.18.2\src\headers) C:\MinGW\lib\gcc\x86_64-w64-mingw32\8.1.0\include
+6. Copy libtomcrypt.a into C:\MinGW\lib\gcc\x86_64-w64-mingw32\8.1.0
+
+NOTE: For other OS like Darwin (OSX), Linux, & FreeBSD, simply use "make install" to build libtommath and libtomcrypt
+
+- SipHash in C (https://github.com/majek/csiphash)
+
+Linux/Unix Compilation:
+0. If necessary, compile libtommath (as this maybe required by libtomcrypt in some systems)
+	cd lib/libtommath-develop/
+	make
+	sudo make install
+1. Make sure to compile the libtomcrypt-1.18.2 library first
+	cd lib/libtomcrypt-1.18.2/
+	make
+	sudo make install
+2. Compile cip
+	make -f makefile.nix
+
+Usage:	cip <options [param]> <enter>
+
+Options and param:
+-s  <string>            The string to encrypt or to hash
+-f  <filename>          The file to encrypt or to hash
+
+-t  <hash_algorithm>    Supported algorithm: md2, md4, md5, sha1, sha224, sha256, sha384,
+						sha512, sha512-256, sha3-224, sha3-256, sha3-384, sha3-512, sha512-224,
+						sha512-256, whirpool, blake2b-160, blake2b-256, blake2b-384, blake2b-512,
+						tiger, blake2s-128, blake2s-160, blake2s-224, blake2s-256, 
+						RIPEMD: rmd128, rmd160, rmd256, rmd320, chc_hash, siphash
+
+-v						Version info
+-h 						Help (this page)
+
+
+[Available Hashes from libtomcrypt]
+
+Descriptor			Name
+----------			----
+sha3_224_desc		sha3-224
+sha3_256_desc		sha3-256
+sha3_384_desc		sha3-384
+sha3_512_desc		sha3-512
+sha224_desc 		sha224
+sha256_desc 		sha256
+sha384_desc 		sha384
+sha512_desc     	sha512
+sha512_224_desc 	sha512-224
+sha512_256_desc 	sha512-256
+sha1_desc 			sha1
+md2_desc			md2
+md4_desc 			md4
+md5_desc 			md5
+tiger_desc			tiger (tiger-192)
+whirlpool_desc		whirlpool
+blake2b_160_desc 	blake2b-160
+blake2b_256_desc 	blake2b-256
+blake2b_384_desc 	blake2b-384
+blake2b_512_desc 	blake2b-512
+blake2s_128_desc 	blake2s-128
+blake2s_160_desc 	blake2s-160
+blake2s_224_desc 	blake2s-224
+blake2s_256_desc 	blake2s-256
+rmd128_desc 		rmd128
+rmd160_desc 		rmd160
+rmd256_desc 		rmd256
+rmd320_desc			rmd320
+chc_desc 			chc_hash  (Cipher Hash Construction)
+	1. chc_desc hash descriptor must be registered with register_hash()
+	2. A cipher has to be registered with CHC (and also in the cipher descriptor tables with register_cipher())
+	   Only one cipher can be bound to the CHC hash at a time. There are additional requirements for the system to work:
+	   - The cipher must have a block size greater than 64–bits
+	   - The cipher must allow an input key the size of the block size
+	   Example: (see crypt.pdf, Section 6.3, p.61)
+
+
+[Available Hashes from chilkat]
+https://www.example-code.com/C/crypt_hash_algorithms.asp
+
+Name
+----
+sha1
+md2
+md5
+sha256
+sha384
+sha512
+haval **(the only algorithm not available with libtomcrypt)**
+	The HavalRounds may have values of 3, 4, or 5. 
+	The KeyLength may have values of 128, 160, 192, 224, or 256
+
+http://www.chilkatsoft.com/refdoc/c_CkCrypt2Ref.html
+ripemd128
+ripemd160
+ripemd256
+ripemd320
+
+
+MODIFIED STRING TO UUID METHOD
+------------------------------
+1. Get the string to hash
+2. Generate 16-bytes hash as required by UUID for the string using SHAKE3-256
+3. Treat each hex-char in the resulting siphash (64-bits) as one single byte resulting to 16-bytes (128-bits)
+4. Apply UUID method to the result of #3. Refer to https://www.cryptosys.net/pki/Uuid.c.html 

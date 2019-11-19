@@ -1,0 +1,25 @@
+## Apple discourages static linking
+CFLAGS=-Wall -pedantic -O2
+
+ODIR=obj
+LDIR=lib
+
+### to statically link, simply specify the full path and library name
+LIBS=libtomcrypt.a
+
+_DEPS = main.c cip.c nutsbox.c hash.c csiphash.c uuid4.c b64.c base64.c cipher.c
+DEPS = $(patsubst %,./%,$(_DEPS))
+
+_OBJ = main.o cip.o nutsbox.o hash.o csiphash.o uuid4.o b64.o base64.o cipher.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+
+$(ODIR)/%.o: %.c $(DEPS)
+	gcc -c -o $@ $<
+
+cip: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS) $(LDIR)/$(LIBS)
+.PHONY: clean
+
+clean:
+	rm -f $(ODIR)/*.o *~ core
