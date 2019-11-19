@@ -1,19 +1,19 @@
 # cip
 <pre>
 cip v0.53 - tool for encryption, decryption, and hashing of given string or file
-by Nestor A. Jaba-an &lt;nestor@nutsbox.ph&gt;, 2019. Public Domain.
+by Nestor A. Jaba-an <a href="mailto:nestor@nutsbox.ph">nestor@nutsbox.ph</a>, 2019. Public Domain.
 
 NOTE: I consider cip itself as public domain (PD), but I used some libraries that
 are not public domain and due credit and license applies to these libraries.
 
 CREDITS:
   - Tom St Denis, LibTomCrypt v1.18.2 (PD), <a href="https://github.com/libtom/libtomcrypt">https://github.com/libtom/libtomcrypt</a>
-  - Tom St Denis, LibTomMath v1.2.0 (PD), https://github.com/libtom/libtommath
-  - Daniel Richards, hashsum.c & ltcrypt.c (PD), <kyhwana@world-net.co.nz>
-  - Majek, https://github.com/majek/csiphash/blob/master/csiphash.c (MIT Lic.)
+  - Tom St Denis, LibTomMath v1.2.0 (PD), <a href="https://github.com/libtom/libtommath">https://github.com/libtom/libtommath</a>
+  - Daniel Richards, hashsum.c & ltcrypt.c (PD), <a href="mailto:kyhwana@world-net.co.nz">kyhwana@world-net.co.nz</a>
+  - Majek, <a href="https://github.com/majek/csiphash/blob/master/csiphash.c">https://github.com/majek/csiphash/blob/master/csiphash.c</a> (MIT Lic.)
   - Aumasson, J. P., & Bernstein, D. J., SipHash (PD)
-  - Rxi, https://github.com/rxi/uuid4 (MIT Lic.)
-  - John Walker, base64-1.5 (PD), http://www.fourmilab.ch/webtools/base64/index.html
+  - Rxi, <a href="https://github.com/rxi/uuid4">https://github.com/rxi/uuid4</a> (MIT Lic.)
+  - John Walker, base64-1.5 (PD), <a href="http://www.fourmilab.ch/webtools/base64/index.html">http://www.fourmilab.ch/webtools/base64/index.html</a>
 
 usage:	cip [OPTIONS [SUB-PARAM]...]
 encrypts, decrypts and hashes key for a given string or file
