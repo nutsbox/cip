@@ -71,7 +71,7 @@ encrypts, decrypts and hashes key for a given string or file
 ## Installation
 cip was developed in C, compiled with gcc or clang (statically, for easy distribution of binary) and tested to run in windows, linux (ubuntu 18.0, centos 7.x, termux in adroid) and macOS Mojave / Catalina.
 <p><b>NOTE:</b><br>
-	You need to download first libtommath and libtomcrypt libraries as given by the links above an save it into lib folder to correspond with the instructions below; otherwise you need to adjust. Anyway, the point is that libtommath and libtomcrypt must be prepared first before compiling cip.
+	You need to download first libtommath and libtomcrypt libraries as given by the links above (see CREDITS) and save it into lib folder to correspond with the instructions below; otherwise you need to adjust. Anyway, the point is that libtommath and libtomcrypt must be prepared first before compiling cip.
 </p>
 <ol>
 <li>Compile libtommath first as this is required by libtomcrypt.
