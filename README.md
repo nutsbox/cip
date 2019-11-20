@@ -83,7 +83,7 @@ sudo make install
 </li>
 <li>Compile libtomcrypt library
 <pre>
-cd lib/libtomcrypt-1.18.2/src/
+cd lib/libtomcrypt-1.18.2
 make
 sudo make install
 </pre>
