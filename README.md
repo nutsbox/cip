@@ -105,3 +105,5 @@ Linux/Unix: make -f makefile.nix
 </li>
 </ol>
 
+## Installation
+If you opted to use the binary version, simply download the corresponding binary file from the bin directory into your local directory.
