@@ -68,8 +68,8 @@ encrypts, decrypts and hashes key for a given string or file
 -v			version info
 -h			help (this page)
 </pre>
-## Installation
-cip was developed in C, compiled with gcc or clang (statically, for easy distribution of binary) and tested to run in windows, linux (ubuntu 18.0, centos 7.x, termux in adroid) and macOS Mojave / Catalina.
+## Compilation
+cip was developed in C, can be compiled with gcc or clang (statically, for easy distribution of binary) and tested to run in windows, linux (ubuntu 18.0, centos 7.x, termux in adroid), FreeBSD-11 and macOS Yosemite / Mojave / Catalina.
 <p><b>NOTE:</b><br>
 First, you need to download or clone libtommath and libtomcrypt libraries as given by the links above (see CREDITS) and save them into lib folder to correspond with the instructions below; otherwise you need to adjust. Anyway, the point is that these libraries must be prepared first before compiling cip.
 </p>
@@ -77,15 +77,18 @@ First, you need to download or clone libtommath and libtomcrypt libraries as giv
 <li>Compile libtommath first as this is required by libtomcrypt.
 <pre>
 cd lib/libtommath-1.2.0/
-make
-sudo make install
+make -f <os_specific_makefile>
+sudo make install clean
 </pre>
 </li>
 <li>Compile libtomcrypt library
 <pre>
 cd lib/libtomcrypt-1.18.2
-make
+make -f <os_specific_makefile>
 sudo make install
+### For macOS, we copy the generated libtomcrypt.a into lib folder for ease of static compilation
+cp libtomcrypt.a ../.
+make clean
 </pre>
 </li>
 <li>If you want to compile against shared or dynamic library, you need to modify the corresponding makefile to remove static-compilation-related options.
@@ -95,6 +98,8 @@ sudo make install
    Windows: mingw32-make
 Linux/Unix: make -f makefile.nix
      macOS: make -f makefile.osx
+   FreeBSD: gmake -f makefile.nix ### because the default make utility in freeBSD has trouble interpreting our makefile
+                                  ### hence we use gmake instead.
 </pre>
 </li>
 </ol>
