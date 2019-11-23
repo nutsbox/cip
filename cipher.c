@@ -1,6 +1,40 @@
+/*-------------------------------------------------------------------
+*  cipher.c:       encryption/decryption implementation file
+*
+*  Description:    Contains cipher routines
+*
+*  Date Created:   17 October 2019
+*
+*  Last Modified:  23 Nov 2019
+*
+*  History:        - 23 Nov 2019 (added comments)
+*                  - 17 Oct 2019 (Initial version)
+*
+*  By Nestor A. Jaba-an. Copyright (c) 2019.
+*  Email: nestor@nutsbox.ph
+*
+*/
 #include "include/cipher.h"
 
 
+/*----------------------------------------------------------
+*  Function:    krypt()
+*
+*  Description: The main encryption/decryption routine 
+*
+*  On Entry:    is_file = true | false
+*               is_encrypt = true | false
+*               char *in = pointer to string or filename
+*                          if is_file is true
+*               char *out = pointer to stdout or filename
+*                           if is_file is true
+*               char *cipher = cipher algorithm to use
+*               char *inkey = the key to use for cipher
+*               char *algo = the hashing algorithm to use
+*
+*  Returns:     (char *) the checksum
+*
+*---------------------------------------------------------*/
 char * krypt (bool is_file, bool is_encrypt, char *in, char *out, char *cipher, char *inkey, char *algo)
 {
 	unsigned char key[MAXBLOCKSIZE], IV[MAXBLOCKSIZE];
@@ -27,7 +61,6 @@ char * krypt (bool is_file, bool is_encrypt, char *in, char *out, char *cipher, 
 	/* register ciphers, hashes, and psuedo random generators */
 	register_all_ciphers();
 	register_all_prngs();
-
 
 	/* if is_file, 'in' is interpreted as filename */
 	if (is_file) fi = fopen(in, "rb");
@@ -57,7 +90,7 @@ char * krypt (bool is_file, bool is_encrypt, char *in, char *out, char *cipher, 
 
 	/* hash the key into key buffer */
 	char *h = (char *) gethash(algo, inkey, &outlen);
-	outlen = ctob(h, key);
+	outlen = ctoby(h, key);
 	/* printf("     hash1: %s\n", h); */
 
 	if (outlen < cipher_descriptor[cipher_idx].min_key_length) outlen = ctobx(h, key);
@@ -134,6 +167,21 @@ char * krypt (bool is_file, bool is_encrypt, char *in, char *out, char *cipher, 
 }
 
 
+/*----------------------------------------------------------
+*  Function:    readkey()
+*
+*  Description: A prompt for a key (windows style). This
+*               function will only be compiled if you are
+*               compiling cip in windows. Otherwise getkey()
+*               is compiled. The advantage of this function
+*               over getkey is it displays '*' on the screen
+*               when you enter your key.
+*
+*  On Entry:    char *prompt = the key prompt
+
+*  Returns:     (char *) the inputted key
+*
+*---------------------------------------------------------*/
 #if defined (_WIN32) || defined(_WIN64)
 char * readkey(char * prompt)
 {
@@ -162,10 +210,23 @@ char * readkey(char * prompt)
 #endif
 
 
+/*----------------------------------------------------------
+*  Function:    getkey()
+*
+*  Description: Driver function to get the key required
+*               for cipher from the user. The function
+*               decides whether to use readkey() or the
+*               standard unix/linux getpass()
+*
+*  On Entry:    none
+
+*  Returns:     (char *) the inputted key
+*
+*---------------------------------------------------------*/
 char * getkey()
 {
-	char * key;
-	char * tk;
+	char * key;    /* key holder           */
+	char * tk;     /* temporary key holder */
 
 	#if defined (_WIN32) || defined(_WIN64)
 		key = readkey("  enter key");
@@ -177,6 +238,7 @@ char * getkey()
 		 tk = getpass("confirm key: ");
 
 		 /* copy the string because getpass releases it afterwards */
+		 /* using concat() function from nutsbox.c                 */
 		 key = concat("", key);
 	#endif
 
@@ -214,7 +276,7 @@ unsigned char * gethash(char *algo, char *in, unsigned long *outlen)
 
 
 
-int ctob(char* chars, unsigned char * bytes)
+int ctoby(char* chars, unsigned char * bytes)
 {
 	int j=0;
 	for( int i = 0; i < strlen(chars); i+=2 ) {

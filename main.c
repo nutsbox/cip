@@ -4,13 +4,14 @@
 *  Description:		A small utility program to perform encryption,
 *					decryption, and hash for string and files
 *
-*  Date Created:   14 October 2019
+*  Date Created:    14 October 2019
 *
-*  Last Modified:  23 October 2019
+*  Last Modified:   20 November 2019
 *
-*  History:        - 14 Oct. 2019 (v0.50 Initial version)
-*                  - 23 Oct. 2019 (v0.51 - completed inclusion of siphash)
-*                  - 05 Nov. 2019 (v0.52 - Encoding and decoding of base64 added)
+*  History:         - 20 Nov. 2019 (v0.53 - encryption/decryption feature added)
+*                   - 05 Nov. 2019 (v0.52 - Encoding and decoding of base64 added)
+*                   - 23 Oct. 2019 (v0.51 - completed inclusion of siphash)
+*                   - 14 Oct. 2019 (v0.50 Initial version)
 *
 *  By Nestor A. Jaba-an. Copyright (c) 2019.
 *  Email: nestor@nutsbox.ph
@@ -47,7 +48,6 @@ int main(int argc, char *argv[])
 	*   Perform task based on given option. Also, at this point. The given
 	*   options are assumed to be valid
 	*----------------------------------------------------------------------*/
-
 
 	/* String to hash or encrypt */
 	if (isOptionGiven(argv, argc, "-s")) {

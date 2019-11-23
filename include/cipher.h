@@ -48,7 +48,7 @@ char * readkey(char * prompt);
 #endif
 char * getkey();
 unsigned char * gethash(char *algo, char *in, unsigned long *outlen);
-int ctob(char * chars, unsigned char * bytes);
+int ctoby(char * chars, unsigned char * bytes);
 int ctobx(char * chars, unsigned char * bytes);
 int ctod(char c);
 char * get_platform_name();

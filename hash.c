@@ -1,13 +1,14 @@
 /*-------------------------------------------------------------------
 *  hash.c:         hash implementation file
 *
-*  Description:    Contains the meat of the functions
+*  Description:    Contains hashing routines
 *
 *  Date Created:   17 October 2019
 *
 *  Last Modified:  17 October 2019
 *
-*  History:        - 17 October 2019 (Initial version)
+*  History:        - 23 Nov 2019 (some cleanup in the comments)
+*                  - 17 Oct 2019 (Initial version)
 *
 *  By Nestor A. Jaba-an. Copyright (c) 2019.
 *  Email: nestor@nutsbox.ph
@@ -18,6 +19,18 @@
 #include "include/cip.h"
 
 
+/*----------------------------------------------------------
+*  Function:    crc32(bool is_file, char *in)
+*
+*  Description: This function generates a corresponding 
+*               crc32 checksum from the input string or file
+*
+*  On Entry:    in = the string or file to checksum
+*               is_file = true | false
+*
+*  Returns:     (char *) the checksum
+*
+*---------------------------------------------------------*/
 char * crc32(bool is_file, char *in) {
 	#define SIZE 4
 	unsigned char * out = (unsigned char *) malloc(SIZE * sizeof(unsigned char));
@@ -27,14 +40,26 @@ char * crc32(bool is_file, char *in) {
 	else len = strlen(in);
 
 	crc32_state ctx;
-	crc32_init(&ctx);                      /* initialize */
-	crc32_update(&ctx, (const unsigned char*) in, len);               /* update */
-	crc32_finish(&ctx, out, SIZE);             /* finish */
+	crc32_init(&ctx);                                      /* initialize */
+	crc32_update(&ctx, (const unsigned char*) in, len);    /* update     */
+	crc32_finish(&ctx, out, SIZE);                         /* finish     */
 
 	return bytox(out, SIZE);
 }
 
 
+/*----------------------------------------------------------
+*  Function:    adler32(bool is_file, char *in)
+*
+*  Description: This function generates a corresponding 
+*               adler32 checksum from the input string or file
+*
+*  On Entry:    in = the string or file to checksum
+*               is_file = true | false
+*
+*  Returns:     (char *) the checksum
+*
+*---------------------------------------------------------*/
 char * adler32(bool is_file, char *in) {
 	#define SIZE 4
 	unsigned char * out = (unsigned char *) malloc(SIZE * sizeof(unsigned char));
@@ -44,19 +69,19 @@ char * adler32(bool is_file, char *in) {
 	else len = strlen(in);
 
 	adler32_state ctx;
-	adler32_init(&ctx);                      /* initialize */
-	adler32_update(&ctx, (const unsigned char*)in, len);               /* update */
-	adler32_finish(&ctx, out, SIZE);             /* finish */
+	adler32_init(&ctx);                                    /* initialize */
+	adler32_update(&ctx, (const unsigned char*)in, len);   /* update     */
+	adler32_finish(&ctx, out, SIZE);                       /* finish     */
 
 	return bytox(out, SIZE);
 }
 
 
 /*----------------------------------------------------------
-*  Function:    unsigned char * hash(unsigned char *in, char *algo)
+*  Function:    hash(unsigned char *in, char *algo)
 *
 *  Description: This function generates a corresponding 
-*               hash key from the input string
+*               hash key from the input string or file
 *
 *  On Entry:    in = the string to hash
 *               algo = the hashing algorithm
@@ -104,7 +129,7 @@ char * hash(char *in, char *algo, bool is_file, char *key)
 	idx = find_hash(algo);
 	if (idx == -1) die(108, algo);
 
-	/* call the hash */
+	/* call appropriate hash */
 	len = sizeof(out);
 	in_len = strlen(in);
 	if (! is_file) {
@@ -124,18 +149,18 @@ char * hash(char *in, char *algo, bool is_file, char *key)
 
 
 /*----------------------------------------------------------
-*  Function:    unsigned * shakehash(int bits, char *msg, int size)
+*  Function:    shakehash(int bits, char *msg, int size)
 *
 *  Description: hash a string based on shake3
 *
 *  On Entry:    bits = hashing strength (128 or 256)
 *               in = the string to hash
-*               size = size of hash (bytes)
+*               size = size of hash (bytes), e.g., see below
 *                      16 bytes = 128 bits
 *                      32 bytes = 256 bits
 *                      64 bytes = 512 bits
 *
-*  Returns:     (char *) hash in bytes
+*  Returns:     (unsigned char *) hash in bytes
 *
 *---------------------------------------------------------*/
 unsigned char * shakehash(int bits, char *in, long size)
