@@ -98,7 +98,8 @@ make clean
    Windows: mingw32-make
 Linux/Unix: make -f makefile.nix
      macOS: make -f makefile.osx
-   FreeBSD: gmake -f makefile.nix ### because the default make utility in freeBSD has trouble interpreting our makefile
+   FreeBSD: gmake -f makefile.nix ### because the default make utility in freeBSD has 
+                                  ### trouble interpreting our makefile
                                   ### hence we use gmake instead.
 </pre>
 </li>
