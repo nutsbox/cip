@@ -85,7 +85,7 @@ sudo make -f &lt;os_specific_makefile&gt; install clean
 <pre>
 cd lib/libtomcrypt-1.18.2
 make -f &lt;os_specific_makefile&gt;
-sudo make -f &lt;os_specific_makefile&gt; install clean
+sudo make -f &lt;os_specific_makefile&gt; install
 ### For macOS, we copy the generated libtomcrypt.a into lib folder for ease of static compilation
 cp libtomcrypt.a ../.
 make clean
