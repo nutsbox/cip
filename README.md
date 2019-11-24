@@ -78,14 +78,14 @@ First, you need to download or clone libtommath and libtomcrypt libraries as giv
 <pre>
 cd lib/libtommath-1.2.0/
 make -f &lt;os_specific_makefile&gt;
-sudo make install clean
+sudo make -f &lt;os_specific_makefile&gt; install clean
 </pre>
 </li>
 <li>Compile libtomcrypt library
 <pre>
 cd lib/libtomcrypt-1.18.2
 make -f &lt;os_specific_makefile&gt;
-sudo make install
+sudo make -f &lt;os_specific_makefile&gt; install clean
 ### For macOS, we copy the generated libtomcrypt.a into lib folder for ease of static compilation
 cp libtomcrypt.a ../.
 make clean
