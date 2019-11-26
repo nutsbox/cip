@@ -34,7 +34,10 @@ char * readfile( char *fname, long *flen )
     char * content;
     FILE* fileptr = fopen(fname, "rb");
     
-    if (!fileptr) fprintf(stderr, "fatal error: unable to open %s\n", fname);
+    if (!fileptr) {
+        fprintf(stderr, "fatal error: unable to open %s\n", fname);
+	return NULL;
+    }
 
     fseek(fileptr, 0, SEEK_END);
     *flen = ftell(fileptr);
