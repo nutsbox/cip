@@ -94,12 +94,12 @@ C:\>cip -s "Hello World!" -ts
 d0e47486bbf4c16acac26f8b653592973c1362909f90262877089f9c8a4536af
 ```
 The output of `cip -h` shows that to select an algorithm, you have to use `-t*` followed by the name of the algorithm. If no name is provided, `cip` defaults to **sha3-256**. The `*` is to be replaced by either `s` or `f`. If you are hashing a string, the option becomes `-ts`. To hash a file, the option becomes `tf`. The following examples depict this point:
-##### Hash a string using md5 algorith
+##### Hash a string using md5 algorithm
 ```markdown
 C:\>cip -s "Hello World!" -ts md5
 ed076287532e86365e841e92bfc50d8c
 ```
-Not changing  `-t*` to either `-ts` or `-tf` results to an error:
+Not changing  `-t*` to either `-ts` or `-tf`, or failure to provide the option, results to an error:
 ```markdown
 C:\>cip -s "Hello World!" -t*
 no given operation(s) to perform
