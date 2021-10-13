@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome to cip
 
-You can use the [editor on GitHub](https://github.com/nutsbox/cip/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You can use cip as an alternative tool for encryption, decryption, B64 encoding/decoding, and hashing of given string or file.
 
 ### Markdown
 
