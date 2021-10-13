@@ -24,8 +24,7 @@ I consider cip, itself, as Public Domain (PD). But I used some libraries that ar
 
 ### Usage
 #### Default
-
-
+Simply typing `cip` at the command line prompt would give you the following:
 
 ```markdown
 Syntax highlighted code block
