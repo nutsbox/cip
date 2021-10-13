@@ -2,9 +2,13 @@
 
 You can use cip as an alternative tool for encryption, decryption, B64 encoding/decoding, and hashing of given string or file.
 
-### Markdown
+### Features
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- String or file hashing
+- String or file encryption / decryption
+- String or file B64 encoding / decoding
+- UUID generation
+- String or file UUID hashing
 
 ```markdown
 Syntax highlighted code block
