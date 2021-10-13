@@ -9,6 +9,7 @@ You can use cip as an alternative tool for encryption, decryption, B64 encoding/
 * String or file B64 encoding / decoding
 * UUID generation
 * UUID generation based on given string or file (maybe considered as UUID hash)
+* Cross-platform - cip has been tested to run on Windows (XP, 7, 10), Linux (Ubuntu 18.0, Centos 7.x and above, Termux in Android), FreeBSD-11 and Mac OSX (Yosemite, Mojave, Catalina)
 
 ```markdown
 Syntax highlighted code block
