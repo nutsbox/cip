@@ -9,6 +9,7 @@ You can use cip as an alternative tool for encryption, decryption, B64 encoding/
 * UUID generation
 * UUID generation based on given string or file (maybe considered as UUID hash)
 * Cross-platform: cip has been tested to run on Windows (XP, 7, 10), Linux (Ubuntu 18.0, Centos 7.x and above, Termux in Android), FreeBSD-11 and Mac OSX (Yosemite, Mojave, Catalina). You may need to recompile if you want to port it to other operating system.
+**NOTE:** `cip` commands are consistent across different supported OS.
 
 ### License
 I consider cip, itself, as Public Domain (PD). But I used some libraries that are not public domain and due credit and license applies to these libraries.
@@ -23,7 +24,6 @@ I consider cip, itself, as Public Domain (PD). But I used some libraries that ar
 - John Walker, base64-1.5 (PD), [http://www.fourmilab.ch/webtools/base64/index.html](http://www.fourmilab.ch/webtools/base64/index.html "base64-1.5")
 
 ### Usage
-`cip` commands are consistent across different supported OS.
 #### Default
 Simply typing `cip` at the command line prompt would give you the following:
 ```markdown
