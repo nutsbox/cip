@@ -99,7 +99,7 @@ The output of `cip -h` shows that to select an algorithm, you have to use `-t*` 
 C:\>cip -s "Hello World!" -ts md5
 ed076287532e86365e841e92bfc50d8c
 ```
-If you did not change  `-t*` to either `-ts` or `-tf` results to an error:
+Not changing  `-t*` to either `-ts` or `-tf` results to an error:
 ```markdown
 C:\>cip -s "Hello World!" -t*
 no given operation(s) to perform
