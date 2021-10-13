@@ -15,12 +15,12 @@ I consider cip, itself, as Public Domain (PD). But I used some libraries that ar
 
 ### Credits
 - Tom St Denis, LibTomCrypt v1.18.2 (PD), [https://github.com/libtom/libtomcrypt](https://github.com/libtom/libtomcrypt, "LibTomCrypt")
-- Tom St Denis, LibTomMath v1.2.0 (PD), https://github.com/libtom/libtommath
-- Daniel Richards, hashsum.c & ltcrypt.c (PD), kyhwana@world-net.co.nz
-- Majek, https://github.com/majek/csiphash/blob/master/csiphash.c (MIT Lic.)
+- Tom St Denis, LibTomMath v1.2.0 (PD), [https://github.com/libtom/libtommath](https://github.com/libtom/libtommath, "LibTomMath")
+- Daniel Richards, hashsum.c & ltcrypt.c (PD), [kyhwana@world-net.co.nz](kyhwana@world-net.co.nz, "hashsum and ltcrypt")
+- Majek, csiphash.c (MIT Lic.), [https://github.com/majek/csiphash/blob/master/csiphash.c](https://github.com/majek/csiphash/blob/master/csiphash.c, "csiphash.c")
 - Aumasson, J. P., & Bernstein, D. J., SipHash (PD)
-- Rxi, https://github.com/rxi/uuid4 (MIT Lic.)
-- John Walker, base64-1.5 (PD), http://www.fourmilab.ch/webtools/base64/index.html
+- Rxi, uuid4 (MIT Lic.), [https://github.com/rxi/uuid4](https://github.com/rxi/uuid4, "uuid4")
+- John Walker, base64-1.5 (PD), [http://www.fourmilab.ch/webtools/base64/index.html](http://www.fourmilab.ch/webtools/base64/index.html, "base64-1.5")
 
 ```markdown
 Syntax highlighted code block
