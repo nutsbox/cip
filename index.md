@@ -8,7 +8,7 @@ You can use cip as an alternative tool for encryption, decryption, B64 encoding/
 * String or file encryption / decryption
 * String or file B64 encoding / decoding
 * UUID generation
-* String or file UUID hashing
+* UUID generation based on given string or file (maybe considered as UUID hash)
 
 ```markdown
 Syntax highlighted code block
