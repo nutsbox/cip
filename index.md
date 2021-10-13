@@ -14,7 +14,7 @@ You can use cip as an alternative tool for encryption, decryption, B64 encoding/
 I consider cip, itself, as Public Domain (PD). But I used some libraries that are not public domain and due credit and license applies to these libraries.
 
 ### Credits
-- Tom St Denis, LibTomCrypt v1.18.2 (PD), [link](https://github.com/libtom/libtomcrypt, "https://github.com/libtom/libtomcrypt")
+- Tom St Denis, LibTomCrypt v1.18.2 (PD), [https://github.com/libtom/libtomcrypt](https://github.com/libtom/libtomcrypt, "LibTomCrypt")
 - Tom St Denis, LibTomMath v1.2.0 (PD), https://github.com/libtom/libtommath
 - Daniel Richards, hashsum.c & ltcrypt.c (PD), kyhwana@world-net.co.nz
 - Majek, https://github.com/majek/csiphash/blob/master/csiphash.c (MIT Lic.)
