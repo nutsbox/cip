@@ -152,6 +152,7 @@ $ md5sum oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
 ```
 #### Hash a file with spaces in file name
 To hash a file with embedded spaces in file name, enclose the file name with `'` (single quote).
+
 **Linux:**
 ```markdown
 $ cip -f 'oracle instantclient basic v21.1.0.0.0-1.x86_64.rpm' -tf md5
