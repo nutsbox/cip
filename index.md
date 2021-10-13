@@ -177,5 +177,9 @@ type "cip -h" for help
 ```
 
 ## Support or Contact
+```markdown
+cip -v
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+cip v0.53 - tool for encryption, decryption, and hashing of given string or file
+by Nestor A. Jaba-an <nestor@nutsbox.ph>, 2019. Public Domain.
+```
