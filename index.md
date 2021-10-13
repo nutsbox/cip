@@ -11,7 +11,7 @@ You can use cip as an alternative tool for encryption, decryption, B64 encoding/
 * Cross-platform - cip has been tested to run on Windows (XP, 7, 10), Linux (Ubuntu 18.0, Centos 7.x and above, Termux in Android), FreeBSD-11 and Mac OSX (Yosemite, Mojave, Catalina). You may need to recompile if you want to port it to other operating system.
 
 ### License
-I consider cip, itself, as public domain (PD). But I used some libraries that are not public domain and due credit and license applies to these libraries.
+I consider cip, itself, as Public Domain (PD). But I used some libraries that are not public domain and due credit and license applies to these libraries.
 
 ### Credits
 - Tom St Denis, LibTomCrypt v1.18.2 (PD), https://github.com/libtom/libtomcrypt
