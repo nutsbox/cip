@@ -27,21 +27,9 @@ I consider cip, itself, as Public Domain (PD). But I used some libraries that ar
 Simply typing `cip` at the command line prompt would give you the following:
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+C:\>cip
+option(s) required.
+type "cip -h" for help
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
