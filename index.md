@@ -3,7 +3,7 @@
 You can use cip as an alternative tool for encryption, decryption, B64 encoding/decoding, and hashing of given string or file.
 
 ### Features
-* [String or file hashing](####string-or-file-hashing)
+* [String or file hashing](#string-or-file-hashing)
 * String or file encryption / decryption
 * String or file B64 encoding / decoding
 * UUID generation
