@@ -1,4 +1,5 @@
 # [cip](https://nutsbox.github.io/cip/)
+Go to [project page] for further details.
 <pre>
 cip v0.53 - tool for encryption, decryption, and hashing of given string or file
 by Nestor A. Jaba-an <a href="mailto:nestor@nutsbox.ph">nestor@nutsbox.ph</a>, 2019. Public Domain.
