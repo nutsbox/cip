@@ -22,6 +22,11 @@ I consider cip, itself, as Public Domain (PD). But I used some libraries that ar
 - Rxi, uuid4 (MIT Lic.), [https://github.com/rxi/uuid4](https://github.com/rxi/uuid4 "uuid4")
 - John Walker, base64-1.5 (PD), [http://www.fourmilab.ch/webtools/base64/index.html](http://www.fourmilab.ch/webtools/base64/index.html "base64-1.5")
 
+### Usage
+#### Default
+
+
+
 ```markdown
 Syntax highlighted code block
 
