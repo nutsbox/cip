@@ -126,7 +126,7 @@ $ cip -s "Hello, World!" -ts siphash -k 1234567890123456
 -bash: !`: event not found
 ```
 ##### Hash a string using siphash algorithm with hashed key
-Having `1234567890123456` as key is not recommendable. A key should be something that you can easily remember. It turns out that you can also use `cip` to hash your easy-to-remember-key and then use the hash as your key to hash a string or file. For this purpose, you can use the **shake3-128/256*** algorithm to produce your hashed key; because it allows you to specify the length of the hash.
+Having `1234567890123456` as key is not recommended. A key should be something that you can easily remember. It turns out that you can also use `cip` to hash your easy-to-remember-key and then use the hash as your key to hash a string or file. For this purpose, you can use the **shake3-128/256*** algorithm to produce your hashed key; because it allows you to specify the length of the hash.
 1. Hash your easy-to-remember-key using shake3-128/256. The length of 8 results to 16-character hash.
 ```markdown
 $ cip -s "my_key" -ts shake3-256 -len 8
