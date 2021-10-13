@@ -137,6 +137,7 @@ d2f924a001794d31
 $ cip -s 'Hello, World!' -ts siphash -k d2f924a001794d31
 3c351a58125fbbfe
 ```
+**TIP:** Hashing with `siphash` provides added protection. Sharing file via internet, you can provide the key you used to hash the file to your recipient, then your recipient can use the same key to `siphash` the file. This way, your recipient is guaranteed that the file indeed came from you and the resulting `siphash` with the given key ensures that the file is not tampered in any way if it matches.
 
 ## Support or Contact
 
