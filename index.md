@@ -139,6 +139,42 @@ $ cip -s 'Hello, World!' -ts siphash -k d2f924a001794d31
 ```
 **TIP:** Hashing with `siphash` provides added protection. Sharing file via internet, you can provide the key you used to hash the file to your recipient, then your recipient can use the same key to `siphash` the file. This way, your recipient is guaranteed that the file indeed came from you and the resulting `siphash` with the given key ensures that the file is not tampered in any way if it matches.
 
+#### Hash a file
+The same principle applies with hashing files. The only difference is that instead of using `-s`, you use `-f`. Instead of `-ts`, you use `-tf`. For example, to hash a file named `oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm` with md5 algorithm, you would issue the following command:
+```markdown
+$ cip -f oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm -tf md5
+25864affe898600c30cc7bc93921eb9e
+```
+Checking with against the default `md5sum` program in Linux, resulting hash should be the same
+```markdown
+$ md5sum oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
+25864affe898600c30cc7bc93921eb9e  oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
+```
+#### Hash a file with spaces in file name
+To hash a file with embedded spaces in file name, enclose the file name with `'` (single quote).
+**Linux:**
+```markdown
+$ cip -f 'oracle instantclient basic v21.1.0.0.0-1.x86_64.rpm' -tf md5
+25864affe898600c30cc7bc93921eb9e
+```
+**Windows PowerShell:** you can either use `"` (double quote) or `'` (single quote)
+```markdown
+> cip -f 'oracle instantclient basic v21.1.0.0.0-1.x86_64.rpm' -tf md5
+25864affe898600c30cc7bc93921eb9e
+
+> cip -f "oracle instantclient basic v21.1.0.0.0-1.x86_64.rpm" -tf md5
+25864affe898600c30cc7bc93921eb9e
+```
+**Windows Command Prompt:** use `"` (double quote) only. Single quote does not work.
+```markdown
+D:\home\install>cip -f "oracle instantclient basic v21.1.0.0.0-1.x86_64.rpm" -tf md5
+25864affe898600c30cc7bc93921eb9e
+
+D:\home\install>cip -f 'oracle instantclient basic v21.1.0.0.0-1.x86_64.rpm' -tf md5
+"'oracle" does not exist or is not accessible
+type "cip -h" for help
+```
+
 ## Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
