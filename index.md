@@ -145,7 +145,7 @@ The same principle applies with hashing files. The only difference is that inste
 $ cip -f oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm -tf md5
 25864affe898600c30cc7bc93921eb9e
 ```
-Checking with against the default `md5sum` program in Linux, resulting hash should be the same
+Checking it against the default `md5sum` program in Linux, resulting hash should be the same
 ```markdown
 $ md5sum oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
 25864affe898600c30cc7bc93921eb9e  oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
