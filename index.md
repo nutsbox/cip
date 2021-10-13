@@ -23,6 +23,7 @@ I consider cip, itself, as Public Domain (PD). But I used some libraries that ar
 - John Walker, base64-1.5 (PD), [http://www.fourmilab.ch/webtools/base64/index.html](http://www.fourmilab.ch/webtools/base64/index.html "base64-1.5")
 
 ### Usage
+`cip` commands is consistent across different supported OS.
 #### Default
 Simply typing `cip` at the command line prompt would give you the following:
 ```markdown
@@ -87,6 +88,11 @@ encrypts, decrypts and hashes key for a given string or file
 ```
 #### String or file hashing
 `cip` supports the following hashing algorithms: md2, md4, md5, sha1, sha224, sha256, sha384, sha512, sha512-224, sha512-256, sha3-224, **sha3-256** (_default_), sha3-384, sha3-512, blake2b-160, blake2b-256, blake2b-384, blake2b-512, whirlpool, tiger, blake2s-128, blake2s-160, blake2s-224, blake2s-256, rmd128, rmd160, rmd256, rmd320, chc_hash, siphash, crc32, adler32, shake3-128, and shake3-256.
+##### Hash a string using the sha3-256 (default)
+```markdown
+C:\>cip -s "Hello World!" -ts
+d0e47486bbf4c16acac26f8b653592973c1362909f90262877089f9c8a4536af
+```
 
 ### Support or Contact
 
