@@ -3,7 +3,7 @@
 You can use cip as an alternative tool for encryption, decryption, B64 encoding/decoding, and hashing of given string or file.
 
 ### Features
-* String or file hashing
+* [String or file hashing](####string-or-file-hashing)
 * String or file encryption / decryption
 * String or file B64 encoding / decoding
 * UUID generation
@@ -85,7 +85,8 @@ encrypts, decrypts and hashes key for a given string or file
  -v                     version info
  -h                     help (this page)
 ```
-
+#### String or file hashing
+`cip` supports the following hashing algorithms: md2 md4 md5 sha1 sha224 sha256 sha384 sha512 sha512-224 sha512-256 sha3-224 sha3-256 (default) sha3-384 sha3-512 blake2b-160 blake2b-256 blake2b-384 blake2b-512 whirlpool tiger blake2s-128 blake2s-160 blake2s-224 blake2s-256 rmd128 rmd160 rmd256 rmd320 chc_hash siphash crc32 adler32 shake3-128 shake3-256
 
 ### Support or Contact
 
