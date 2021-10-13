@@ -2,7 +2,7 @@
 
 You can use cip as an alternative tool for encryption, decryption, B64 encoding/decoding, and hashing of given string or file.
 
-### Features
+## Features
 * [String or file hashing](#string-or-file-hashing)
 * String or file encryption / decryption
 * String or file B64 encoding / decoding
@@ -12,10 +12,10 @@ You can use cip as an alternative tool for encryption, decryption, B64 encoding/
 
 **NOTE:** `cip` commands are consistent across different supported OS.
 
-### License
+## License
 I consider cip, itself, as Public Domain (PD). But I used some libraries that are not public domain and due credit and license applies to these libraries.
 
-### Credits
+## Credits
 - Tom St Denis, LibTomCrypt v1.18.2 (PD), [https://github.com/libtom/libtomcrypt](https://github.com/libtom/libtomcrypt "LibTomCrypt")
 - Tom St Denis, LibTomMath v1.2.0 (PD), [https://github.com/libtom/libtommath](https://github.com/libtom/libtommath "LibTomMath")
 - Daniel Richards, hashsum.c & ltcrypt.c (PD), [kyhwana@world-net.co.nz](kyhwana@world-net.co.nz "hashsum and ltcrypt")
@@ -24,14 +24,14 @@ I consider cip, itself, as Public Domain (PD). But I used some libraries that ar
 - Rxi, uuid4 (MIT Lic.), [https://github.com/rxi/uuid4](https://github.com/rxi/uuid4 "uuid4")
 - John Walker, base64-1.5 (PD), [http://www.fourmilab.ch/webtools/base64/index.html](http://www.fourmilab.ch/webtools/base64/index.html "base64-1.5")
 
-### Usage
-#### Default
+## Usage
+### Default
 Simply typing `cip` at the command line prompt would give you the following:
 ```markdown
 option(s) required.
 type "cip -h" for help
 ```
-#### Help
+### Help
 `cip -h`
 ```markdown
 usage: cip [OPTIONS [SUB-PARAM]...]
@@ -87,15 +87,15 @@ encrypts, decrypts and hashes key for a given string or file
  -v                     version info
  -h                     help (this page)
 ```
-#### String or file hashing
+### String or file hashing
 `cip` supports the following hashing algorithms: md2, md4, md5, sha1, sha224, sha256, sha384, sha512, sha512-224, sha512-256, sha3-224, **sha3-256** (_default_), sha3-384, sha3-512, blake2b-160, blake2b-256, blake2b-384, blake2b-512, whirlpool, tiger, blake2s-128, blake2s-160, blake2s-224, blake2s-256, rmd128, rmd160, rmd256, rmd320, chc_hash, siphash, crc32, adler32, shake3-128, and shake3-256.
-##### Hash a string using sha3-256 (default) Algorithm
+#### Hash a string using sha3-256 (default) Algorithm
 ```markdown
 C:\>cip -s "Hello World!" -ts
 d0e47486bbf4c16acac26f8b653592973c1362909f90262877089f9c8a4536af
 ```
 The output of `cip -h` shows that to select an algorithm, you have to use `-t*` followed by the name of the algorithm. If no algorithm is provided, `cip` defaults to **sha3-256**. The `*` is to be replaced by either `s` or `f`. If you are hashing a string, the option becomes `-ts`. To hash a file, the option becomes `tf`. The following examples depict this point:
-##### Hash a string using md5 algorithm
+#### Hash a string using md5 algorithm
 ```markdown
 C:\>cip -s "Hello World!" -ts md5
 ed076287532e86365e841e92bfc50d8c
@@ -114,7 +114,7 @@ C:\>cip -s "Hello World!"
 no given operation(s) to perform
 type "cip -h" for help
 ```
-##### Hash a string using siphash algorithm
+#### Hash a string using siphash algorithm
 Siphash requires a key of 16-characters (minimum). The following example uses **siphash** to hash a string in Linux:
 ```markdown
 $ cip -s 'Hello, World!' -ts siphash -k 1234567890123456
@@ -125,7 +125,7 @@ ccafd406d71ce829
 $ cip -s "Hello, World!" -ts siphash -k 1234567890123456
 -bash: !`: event not found
 ```
-##### Hash a string using siphash algorithm with hashed key
+#### Hash a string using siphash algorithm with hashed key
 Having `1234567890123456` as key is not recommended. A key should be something that you can easily remember. It turns out that you can also use `cip` to hash your easy-to-remember-key and then use the hash as your key to hash a string or file. For this purpose, you can use the **shake3-128/256*** algorithm to produce your hashed key; because it allows you to specify the length of the hash.
 1. Hash your easy-to-remember-key using shake3-128/256. The length of 8 results to 16-character hash.
 ```markdown
@@ -138,6 +138,6 @@ $ cip -s 'Hello, World!' -ts siphash -k d2f924a001794d31
 3c351a58125fbbfe
 ```
 
-### Support or Contact
+## Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
