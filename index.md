@@ -29,7 +29,7 @@ Simply typing `cip` at the command line prompt would give you the following:
 option(s) required.
 type "cip -h" for help
 ```
-### Help
+#### Help
 `cip -h`
 ```markdown
 usage: cip [OPTIONS [SUB-PARAM]...]
