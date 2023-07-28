@@ -132,18 +132,18 @@ uint64_t gettime_ns() {
 *---------------------------------------------------------*/
 char *pullstr( char *s1, int pos, int length ) {
 
-    char *p = (char *) malloc( length + 1);
-
-    /* Save the original position */
-    char *r = p;
-
     if (pos >= strlen(s1)) {
         return NULL;
     }
 
-    if (length >= strlen(s1)) {
+    if ( (length + pos - 2) >= strlen(s1)) {
         return NULL;
     }
+
+    char *p = (char *) malloc( length + 1);
+
+    /* Save the original position */
+    char *r = p;
 
     while (length > 0) {
         *p = *(s1 + (pos -1));
