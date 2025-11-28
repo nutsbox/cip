@@ -3,9 +3,9 @@
 *
 *  Description:		Contains the meat of the functions
 *
-*  Date Created:   14 October 1019
+*  Date Created:   14 October 2019
 *
-*  Last Modified:  14 October 1019
+*  Last Modified:  14 October 2019
 *
 *  History:        - 14 October 2019 (Initial version)
 *
@@ -328,3 +328,4 @@ void version(void)
 	fprintf(stdout, "   - John Walker, base64-1.5 (PD), http://www.fourmilab.ch/webtools/base64/index.html\n");
 	fprintf(stdout, "\n");
 }
+
